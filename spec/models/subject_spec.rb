@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Subject, :type => :model do
 
+  it "has a valid factory" do
+    expect(FactoryGirl.build(:contact)).to be_valid
+  end 
+
   it "is valid with a name" do
   	subject = Subject.new(
   		name: 'Art')
