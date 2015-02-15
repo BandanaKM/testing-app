@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :subject do
-    name "Art"
+    name { Faker::Lorem.word}
   end
+  
 end

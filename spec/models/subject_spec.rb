@@ -2,23 +2,23 @@ require 'rails_helper'
 
 RSpec.describe Subject, :type => :model do
   
-  it "is valid with a name" do
-  	subject = Subject.new(
-  		name: 'Jian')
+  it "has a valid factory" do
+  	expect(FactoryGirl.build(:subject)).to be_valid
   end 
 
   it "is invalid without a name" do
-    subject = Subject.new(name: nil)
+    subject = FactoryGirl.build(:subject, name: nil)
     subject.valid?
     expect(subject.errors[:name]).to include("can't be blank")
   end
 
-  it "is valid with a name shorter than or equal to 20 letters" do
-    subject = Subject.new(name: "a")
-    subject.valid?
-    expect(subject).to be_valid
-  end 
+  # it "is valid with a name shorter than or equal to 20 letters" do
+  #   subject = Subject.new(name: "a")
+  #   subject.valid?
+  #   expect(subject).to be_valid
+  # end 
 
+  # ===
 
   # it "is invalid with a name longer than 20 letters" do
   #   subject = Subject.new(
@@ -28,6 +28,8 @@ RSpec.describe Subject, :type => :model do
   # end 
 
   # need to figure out above
+
+  # ===
 
    it "should have many projects" do
     projects_association = Subject.reflect_on_association(:projects)
