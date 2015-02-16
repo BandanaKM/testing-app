@@ -27,8 +27,6 @@ RSpec.describe Subject, :type => :model do
   #   expect(subject.errors[:name]).to include("can't have a name longer than 20 letters")
   # end 
 
-  # need to figure out above
-
   # ===
 
    it "should have many projects" do

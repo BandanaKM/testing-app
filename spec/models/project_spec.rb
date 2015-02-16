@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Project do 
+RSpec.describe Project, :type => :model do
   
   it "has a valid factory" do
   	expect(FactoryGirl.build(:project)).to be_valid
