@@ -2,10 +2,10 @@ class SubjectsController < ApplicationController
 
   def index
   	@subjects = Subject.all
-  end 
+  end
 
   def show
-    @subject = Subject.find(params[:project_id])
+    @subject = Subject.find(params[:id])
   end
 
   def create
@@ -15,13 +15,16 @@ class SubjectsController < ApplicationController
     else
       render('index')
     end
-
-  end 
+  end
 
   def destroy
   	subject = Subject.find(params[:id]).destroy
     redirect_to(:action => 'index')
-  end 
+  end
 
+  private
+  def subject_params
+    params.require(:subject).permit(:name)
+  end
 
 end
