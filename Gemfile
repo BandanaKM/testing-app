@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'pry' # remove once we're done
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
@@ -27,14 +27,14 @@ gem 'spring',        group: :development
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
-  gem 'factory_girl_rails', '~> 4.4.1'	
+  gem 'factory_girl_rails', '~> 4.4.1'
 end
 
 group :test do
   gem 'faker', '~> 1.4.3'
   gem 'capybara', '~> 2.4.3'
   gem 'database_cleaner', '~> 1.3.0'
-end 
+end
 
 
 # Use ActiveModel has_secure_password
